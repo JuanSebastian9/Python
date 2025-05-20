@@ -1,0 +1,134 @@
+
+# -------------------------------
+#1 aumenta el rango con range
+# -------------------------------
+
+for i in range(10):    #para i #en range(aumentarle 10)
+    print(i)  # Imprime del 0 al 9
+
+for i in range(3, 10):       
+    print(i)  # Imprime del 3 al 9
+
+# -------------------------------
+#2 condiciones o bucles
+# -------------------------------
+
+frutas = ["manzana", "pera", "uva", "naranja", "tomate"]
+for fruta in frutas:             #para fruta en frutas
+    if fruta == "naranja":       #condicion si esta naraja 
+        print("naranja encontrada")        #colocar naranja encontrada
+    print(fruta)                                 
+
+#primera rango de 2 a 8 y el 3 es una condicion sea lo suma
+
+for i in range(2, 8, 3):
+    print("El valor de i es", i) #inprimer 2 y 5 
+    #explicacion 2+3 = 5 y 5+3 = 8 (esta fuera del rango no lo imprimer )
+
+# -------------------------------
+#3 crea un es muy simple aquí: escribe un programa que use un bucle for para "contar de forma mississippi" 
+# -------------------------------
+
+
+# hasta cinco. Habiendo contado hasta cinco, el programa debería imprimir en la pantalla el mensaje final
+#  "¡Listos o no, ahí voy!"
+import time
+
+for i in range(1,6):  #cuenta hasta 5 por el rango 
+    print(i,"Mississippi")  
+    time.sleep(1)  #cada 1 segundo de tienpo se ejecuta 
+
+print("Lista o no, aquí vengo!") #cuando termina imprime esto
+
+# break - ejemplo
+print("La instrucción break:")
+for i in range(1, 6):
+    if i == 3:
+        break
+    print("Dentro del bucle.", i)
+print("Fuera del bucle.")
+
+# continue - ejemplo
+print("\nLa instrucción continue:")
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print("Dentro del bucle.", i)
+print("Fuera del bucle.")
+
+# -------------------------------
+#4 Tu tarea aquí es aún más especial que antes: ¡Debes rediseñar el devorador de vocales (feo) del laboratorio anterior 
+# y crear un mejor devorador de vocales (lindo) mejorado! Escribe un programa que use ejemplo:
+# -------------------------------
+
+
+#Gregory inprimir GRGRY
+
+
+word_without_vowels = ""  # Inicializa una variable para almacenar la palabra sin vocales
+
+user_word = input("Ingrese una palabra: ")  # Pide al usuario una palabra
+user_word = user_word.upper()  # Convierte la palabra a mayúsculas
+
+for letra in user_word:  # Itera sobre cada letra de la palabra (pasa por cada letra)
+    if letra in "AEIOU":  # Si la letra es una vocal
+        continue  # Salta al siguiente ciclo del bucle para omitirlo y comienza de nuevo
+    word_without_vowels += letra # Concatenar la letra que no sea vocal
+
+print(word_without_vowels)  # Imprime la palabra sin vocales ejemplo BSTMS
+
+# -------------------------------
+#5 saber si la cadena esta la letra a con if in
+# -------------------------------
+
+# Definimos una lista de colores
+colores = ['rojo', 'verde', 'azul']
+
+# Solicitamos al usuario que ingrese un color a buscar
+buscado = input("Ingrese el color a buscar: ").lower()  # Convertimos a minúsculas para evitar errores de mayúsculas
+
+# Buscamos si el color ingresado está en la lista
+if buscado in colores:
+    print(f"Se encontró '{buscado}' en la lista.")  # Si el color está, lo indicamos
+else:
+    print(f"'{buscado}' no está en la lista.")  # Si no está, mostramos un mensaje
+
+# -------------------------------
+# Contador de palabras en una lista
+# -------------------------------
+
+# Definimos una lista de palabras de ejemplo
+palabras = ['hola', 'mundo', 'hola', 'python', 'mundo', 'mundo']
+
+# Creamos un diccionario vacío para contar la frecuencia de palabras
+contador = {}
+
+# Recorremos cada palabra en la lista
+for palabra in palabras:
+    if palabra in contador:
+        contador[palabra] += 1  # Si la palabra ya existe en el diccionario, sumamos 1
+    else:
+        contador[palabra] = 1  # Si es la primera vez que aparece, la inicializamos en 1
+
+# Mostramos el resultado final
+print("Frecuencia de palabras:", contador)
+
+# -------------------------------
+#6 Se crea una matriz (lista de listas) de 31 días, cada uno con 24 horas. para saber la temperatura mas alta
+# -------------------------------
+
+# Creamos una matriz de 31 días con 24 horas cada uno, inicializada en 0.0
+temperatura = [[0.0 for h in range(24)] for d in range(31)] 
+
+# Suponiendo que la matriz se actualiza con temperaturas reales
+# Ejemplo: temperatura[0][12] = 30.5  # Día 1 a las 12 PM
+
+valor_temperatura = -100.0  # Inicializamos con un valor bajo para asegurarnos de que cualquier temperatura real lo supere.
+
+for day in temperatura:  # Recorremos cada día en la matriz 'temperatura'
+    for temp in day:  # Recorremos cada temperatura en el día actual
+        if temp > valor_temperatura:  # Si encontramos una temperatura más alta que la registrada hasta ahora
+            valor_temperatura = temp  # Actualizamos la variable
+
+# Finalmente, imprimimos la temperatura más alta encontrada en la matriz.
+print("La temperatura más alta fue:", valor_temperatura)
